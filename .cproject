@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+<?fileVersion 4.0.0?>
+
+<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
 		<cconfiguration id="photran.managedbuild.toolchain.intel.fortran.x86_64.base.818846605">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="photran.managedbuild.toolchain.intel.fortran.x86_64.base.818846605" moduleId="org.eclipse.cdt.core.settings" name="Default">
@@ -42,6 +44,74 @@
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 		</cconfiguration>
+		<cconfiguration id="photran.managedbuild.toolchain.intel.fortran.x86_64.base.818846605.1034140907">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="photran.managedbuild.toolchain.intel.fortran.x86_64.base.818846605.1034140907" moduleId="org.eclipse.cdt.core.settings" name="intel">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.photran.core.intel.IntelCompilerErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildProperties="" description="Intel Fortran compiler" id="photran.managedbuild.toolchain.intel.fortran.x86_64.base.818846605.1034140907" name="intel" parent="org.eclipse.cdt.build.core.emptycfg">
+					<folderInfo id="photran.managedbuild.toolchain.intel.fortran.x86_64.base.818846605.1034140907." name="/" resourcePath="">
+						<toolChain id="photran.managedbuild.toolchain.intel.fortran.x86_64.base.289523565" name="photran.managedbuild.toolchain.intel.fortran.x86_64.base" superClass="photran.managedbuild.toolchain.intel.fortran.x86_64.base">
+							<targetPlatform archList="x86_64" binaryParser="org.eclipse.cdt.core.ELF" id="photran.managedbuild.target.intel.platform.x86_64.base.772186176" name="Intel(R) 64 Platform" osList="linux" superClass="photran.managedbuild.target.intel.platform.x86_64.base"/>
+							<builder id="photran.managedbuild.target.intel.builder.x86_64.base.1981726378" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="photran.managedbuild.target.intel.builder.x86_64.base"/>
+							<tool id="photran.managedbuild.tool.intel.gnu.c.compiler.x86_64.base.465616155" name="GCC C Compiler" superClass="photran.managedbuild.tool.intel.gnu.c.compiler.x86_64.base">
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1307463650" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="photran.managedbuild.tool.intel.fortran.compiler.x86_64.base.1993348237" name="Intel(R) Intel(R) 64 Fortran Compiler" superClass="photran.managedbuild.tool.intel.fortran.compiler.x86_64.base">
+								<inputType id="photran.managedbuild.tool.intel.fortran.compiler.input.762846608" superClass="photran.managedbuild.tool.intel.fortran.compiler.input"/>
+							</tool>
+							<tool id="photran.managedbuild.tool.intel.fortran.linker.x86_64.base.1333559695" name="Intel(R) Fortran Linker" superClass="photran.managedbuild.tool.intel.fortran.linker.x86_64.base">
+								<inputType id="photran.managedbuild.tool.intel.fortran.linker.input.1734260735" superClass="photran.managedbuild.tool.intel.fortran.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="photran.managedbuild.tool.intel.gnu.assembler.x86_64.base.1949149368" name="GCC Assembler" superClass="photran.managedbuild.tool.intel.gnu.assembler.x86_64.base">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1310156321" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+							<tool id="photran.managedbuild.tool.intel.fortran.archiver.x86_64.base.1247228802" name="Archiver" superClass="photran.managedbuild.tool.intel.fortran.archiver.x86_64.base"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="photran.managedbuild.toolchain.intel.fortran.x86_64.base.818846605.1034140907.767941524">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="photran.managedbuild.toolchain.intel.fortran.x86_64.base.818846605.1034140907.767941524" moduleId="org.eclipse.cdt.core.settings" name="GNU">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildProperties="" description="GNU Fortran compiler" id="photran.managedbuild.toolchain.intel.fortran.x86_64.base.818846605.1034140907.767941524" name="GNU" parent="org.eclipse.cdt.build.core.emptycfg">
+					<folderInfo id="photran.managedbuild.toolchain.intel.fortran.x86_64.base.818846605.1034140907.767941524." name="/" resourcePath="">
+						<toolChain id="photran.managedbuild.toolchain.gnu.fortran.exe.debug.1865595715" name="GCC Fortran" superClass="photran.managedbuild.toolchain.gnu.fortran.exe.debug">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="photran.managedbuild.target.gnu.platform.exe.debug.569209534" name="Debug Platform" osList="solaris,linux,hpux,aix,qnx" superClass="photran.managedbuild.target.gnu.platform.exe.debug"/>
+							<builder id="photran.managedbuild.target.gnu.builder.exe.debug.2053287524" managedBuildOn="false" name="Gnu Make Builder.GNU" superClass="photran.managedbuild.target.gnu.builder.exe.debug"/>
+							<tool id="photran.managedbuild.tool.gnu.c.compiler.exe.debug.2086414902" name="GCC C Compiler" superClass="photran.managedbuild.tool.gnu.c.compiler.exe.debug"/>
+							<tool id="photran.managedbuild.tool.gnu.fortran.compiler.exe.debug.803043318" name="GNU Fortran Compiler" superClass="photran.managedbuild.tool.gnu.fortran.compiler.exe.debug"/>
+							<tool id="photran.managedbuild.tool.gnu.fortran.linker.exe.debug.1159268517" name="GNU Fortran Linker" superClass="photran.managedbuild.tool.gnu.fortran.linker.exe.debug"/>
+							<tool id="photran.managedbuild.tool.gnu.assembler.exe.debug.2053023381" name="GCC Assembler" superClass="photran.managedbuild.tool.gnu.assembler.exe.debug"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="SWAT.null.830438475" name="SWAT"/>
@@ -52,6 +122,9 @@
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope" versionNumber="2">
 		<configuration configurationName="Default">
+			<resource resourceType="PROJECT" workspacePath="/SWAT"/>
+		</configuration>
+		<configuration configurationName="GNU">
 			<resource resourceType="PROJECT" workspacePath="/SWAT"/>
 		</configuration>
 	</storageModule>
