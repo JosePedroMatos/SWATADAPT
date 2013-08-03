@@ -138,7 +138,10 @@
       write (8,1000) prog, values(2), values(3), values(1), values(5),  &
      &               values(6), values(7)
       write (8,1010) title
-      write (8,1050) (hedrsv(j), j = 1, 41)
+      !! Changed by ADAPT
+      !write (8,1050) (hedrsv(j), j = 1, 41)
+      write (8,1050) (hedrsv(j), j = 1, 8)
+      !!
 !! write headings to reservoir output file (output2.rsv)
       if (isproj == 1) then
       write (22,1000) prog, values(2), values(3), values(1), values(5), &

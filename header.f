@@ -94,20 +94,27 @@
      &602,614,626,638,650,662,674,686,698,710,722,734,746,758/)        
 
 !!    column headers for reservoir output file
+!!    commented by ADAPT
+!      hedrsv = (/"    VOLUMEm3","  FLOW_INcms"," FLOW_OUTcms",          &
+!     &           "    PRECIPm3","      EVAPm3","   SEEPAGEm3",          &
+!     &           "  SED_INtons"," SED_OUTtons"," SED_CONCppm",          &
+!     &           "   ORGN_INkg","  ORGN_OUTkg"," RES_ORGNppm",          &
+!     &           "   ORGP_INkg","  ORGP_OUTkg"," RES_ORGPppm",          &
+!     &           "    NO3_INkg","   NO3_OUTkg","  RES_NO3ppm",          &
+!     &           "    NO2_INkg","   NO2_OUTkg","  RES_NO2ppm",          &
+!     &           "    NH3_INkg","   NH3_OUTkg","  RES_NH3ppm",          &
+!     &           "   MINP_INkg","  MINP_OUTkg"," RES_MINPppm",          &
+!     &           "   CHLA_INkg","  CHLA_OUTkg","SECCHIDEPTHm",          &
+!     &           "   PEST_INmg","  REACTPSTmg","    VOLPSTmg",          &
+!     &           "  SETTLPSTmg","RESUSP_PSTmg","DIFFUSEPSTmg",          &
+!     &           "REACBEDPSTmg","   BURYPSTmg","  PEST_OUTmg",          &
+!     &           "PSTCNCWmg/m3","PSTCNCBmg/m3"/)
+!!
+!!    Added by ADAPT
       hedrsv = (/"    VOLUMEm3","  FLOW_INcms"," FLOW_OUTcms",          &
      &           "    PRECIPm3","      EVAPm3","   SEEPAGEm3",          &
-     &           "  SED_INtons"," SED_OUTtons"," SED_CONCppm",          &
-     &           "   ORGN_INkg","  ORGN_OUTkg"," RES_ORGNppm",          &
-     &           "   ORGP_INkg","  ORGP_OUTkg"," RES_ORGPppm",          &
-     &           "    NO3_INkg","   NO3_OUTkg","  RES_NO3ppm",          &
-     &           "    NO2_INkg","   NO2_OUTkg","  RES_NO2ppm",          &
-     &           "    NH3_INkg","   NH3_OUTkg","  RES_NH3ppm",          &
-     &           "   MINP_INkg","  MINP_OUTkg"," RES_MINPppm",          &
-     &           "   CHLA_INkg","  CHLA_OUTkg","SECCHIDEPTHm",          &
-     &           "   PEST_INmg","  REACTPSTmg","    VOLPSTmg",          &
-     &           "  SETTLPSTmg","RESUSP_PSTmg","DIFFUSEPSTmg",          &
-     &           "REACBEDPSTmg","   BURYPSTmg","  PEST_OUTmg",          &
-     &           "PSTCNCWmg/m3","PSTCNCBmg/m3"/)
+     &           "  HEIGHTmasl","   SURFACEm2"/)
+!!
 
 !!    numbers printed to VB interface reservoir output file 
       icolrsv = (/38,50,62,74,86,98,110,122,134,146,158,170,182,194,    &

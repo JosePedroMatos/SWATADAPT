@@ -116,6 +116,9 @@
       resorgpo = 0.
       respesti = 0.
       ressa = 0.
+      !! Added by ADAPT
+      adapt_h = 0.
+      !!
       ressedc = 0.
       ressedi = 0.
       if (varoute(3,inum2) < 1.e-6) varoute(3,inum2) = 0.0

@@ -101,7 +101,7 @@
 	  real :: inised, finsed, setsed, remsetsed
 
 !! added by ADAPT
-      real :: adapt_h, adapt_lf,adapt_uf, adapt_qmax
+      real :: adapt_lf,adapt_uf, adapt_qmax
       real :: adaptfvolh, adaptfsurh, adaptfmaxd, adapt_sub_area
       real :: adapt_hru_area
       integer :: adapt_hru, adapt_watb_cntr, adapt_othr_cntr
@@ -121,7 +121,6 @@
 	  setsed = 0.
 	  remsetsed = 0.
 !! added by ADAPT
-      adapt_h = 0.
       adapt_qmax = 0.
       adapt_lf = 0.
       adapt_uf = 0.
@@ -324,22 +323,77 @@
           !!Added by ADAPT (cases 5, 6 and 7)
           case (5)
             !! Natural reservoir
-            adapt_h = adaptfvolh(res_vol(jres), jres)
-
-            if (adapt_h>adapt_res_ph(jres)) then
-                adapt_lf = adapt_k(jres)*adapt_res_ph(jres)
-                adapt_uf = adapt_alpha(jres)*                           &
-     &              (max(adapt_h-adapt_res_ph(jres)-adapt_h0(jres),0.)) &
-     &              **adapt_beta(jres)
-            else
-                adapt_lf = adapt_k(jres)*adapt_h
-                adapt_uf = 0.
-            end if
+            adapt_lf = 86400.*adapt_k(jres)*adapt_h
+            adapt_uf = 86400.*adapt_alpha(jres)*                        &
+     &              max(adapt_h-adapt_h0(jres),0.)**adapt_beta(jres)
             resflwo = adapt_lf + adapt_uf
 
           case (6)
             !! Monthly controlled reservoir with partial observations
+            resflwo = res_out(jres,i_mo,curyr)
 
+            if (resflwo<0) then
+              !! There is no series or the series is missing data. Normal calculation is performed
+
+              !! Define target volume for the day
+              targ = 0.
+              if (starg(i_mo,jres) > 0.) then
+                !! Monthly target
+                targ = starg(i_mo,jres)
+              else
+                !! No monthly target
+                if (iflod2r(jres) > iflod1r(jres)) then
+                  if (i_mo > iflod1r(jres) .and. i_mo < iflod2r(jres))  &
+     &                                                              then
+                    !! Not within the flood season
+                    targ = res_evol(jres)
+                  else
+                    !! Within the flood season
+                    if (starg_fps(jres) >0.) then
+                      !! The target is a percentage of the principal spillway's volume
+                      targ = res_pvol(jres) * starg_fps(jres)
+                    else
+                      !! target storage based on flood season and soil water
+                      xx = Min(sub_sw(res_sub(jres))/sub_sumfc(res_sub( &
+     &                                                      jres)), 1.)
+                      targ = res_pvol(jres) + .5 * (1. - xx) *          &
+     &                                 (res_evol(jres) - res_pvol(jres))
+                    end if
+                  end if
+                else
+                  if (i_mo > iflod1r(jres) .or. i_mo < iflod2r(jres))   &
+     &                                                              then
+                    !! Not within the flood season
+                    targ = res_evol(jres)
+                  else
+                    !! Within the flood season
+                    if (starg_fps(jres) >0.) then
+                      !! The target is a percentage of the principal spillway's volume
+                      targ = res_pvol(jres) * starg_fps(jres)
+                    else
+                      !! target storage based on flood season and soil water
+                      xx = Min(sub_sw(res_sub(jres))/sub_sumfc(res_sub( &
+     &                                                      jres)), 1.)
+                      targ = res_pvol(jres) + .5 * (1. - xx) *          &
+     &                                 (res_evol(jres) - res_pvol(jres))
+                    end if
+                  end if
+                end if
+              endif
+
+              !! Reservoir level adjustment
+              if (res_vol(jres) > targ) then
+                resflwo = (res_vol(jres) - targ) / ndtargr(jres)
+              else
+                resflwo = 0.
+              end if
+
+              !! Emergency spillage
+              if (res_vol(jres)-resflwo > res_evol(jres)) then
+                resflwo = res_vol(jres)-res_evol(jres)
+              end if
+
+            end if
 
           case (7)
             !! Daily controlled reservoir with partial observations
@@ -407,6 +461,11 @@
                 resflwo = 0.
               end if
 
+              !! Emergency spillage
+              if (res_vol(jres)-resflwo > res_evol(jres)) then
+                resflwo = res_vol(jres)-res_evol(jres)
+              end if
+
             end if
 
         end select
@@ -436,8 +495,8 @@
           !!resflwo = oflowmx(i_mo,jres)
         !!endif
         !! added by ADAPT
-        if ((resflwo > adapt_qmax) .and. (adapt_qmax>0.)) then
-          resflwo = adapt_qmax
+        if ((resflwo > adapt_qmax*86400.) .and. (adapt_qmax>0.)) then
+          resflwo = adapt_qmax*86400.
         endif
         !!
 

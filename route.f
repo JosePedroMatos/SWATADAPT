@@ -127,9 +127,14 @@
       bankst(jrch) = bankst(jrch) - revapday
 
 !! compute contribution of water in bank storage to streamflow
+
       qdbank = bankst(jrch) * (1. - alpha_bnke(jrch))
       bankst(jrch) = bankst(jrch) - qdbank
       rtwtr = rtwtr + qdbank
+      !!print *, "jrch ", jrch, "alpha_bnk(jrch) ", alpha_bnk(jrch)
+      !!print *, "jrch ", jrch, "bankst(jrch) ", bankst(jrch)
+      !!print *, "jrch ", jrch, "rtwtr ", rtwtr
+
       if (ievent > 2) then
         do ii = 1, nstep
           hrtwtr(ii) = hrtwtr(ii) + qdbank / real(nstep)

@@ -50,6 +50,9 @@
       real :: sepcrk, sepcrktot, fertno3, fertnh3, fertorgn, fertsolp
       real :: fertorgp
       real :: fertp, grazn, grazp, soxy, qdfr, sdti, rtwtr, ressa, wgps
+      !! Added by ADAPT
+      real :: adapt_h
+      !!
       real :: rttime, rchdep, rtevp, rttlc, da_km, resflwi, wdlps, wglps
       real :: resflwo, respcp, resev, ressep,ressedi,ressedo,dtot,wdprch
       real :: nperco, pperco, rsdco, phoskd, voltot, volcrmin, msk_x
@@ -650,7 +653,10 @@
       character(len=17), dimension (300) :: pname
 !!    adding qtile to output.hru write 3/2/2010 gsm  increased heds(70) to heds(71)
 !!    increased hedr(42) to hedr(45) for output.rch gsm 10/17/2011
-      character(len=13) :: heds(78),hedb(22),hedr(45),hedrsv(41)
+      !! Changed by ADAPT
+      !character(len=13) :: heds(78),hedb(22),hedr(45),hedrsv(41)
+      character(len=13) :: heds(78),hedb(22),hedr(45),hedrsv(8)
+      !!
 !!      character(len=13) :: heds(73),hedb(21),hedr(42),hedrsv(41)
       character(len=13) :: hedwtr(40)
 !     character(len=4) :: title(60), cpnm(250)

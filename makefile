@@ -30,6 +30,7 @@ rewind_init.o
 # Options
 #compilerOpt = -fast
 #compilerOpt = -debug full
+compilerOpt = -O0 -g
 	
 #compiler = ifort
 compiler = gfortran	

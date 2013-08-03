@@ -99,6 +99,7 @@
       read (103,*,iostat=eof) ch_wdr(irch)
       if (eof < 0) exit
       read (103,*,iostat=eof) alpha_bnk(irch)
+      !!print *, irch, "alpha_bnk(irch)", alpha_bnk(irch)
       if (eof < 0) exit
       read (103,*,iostat=eof) icanal(irch)
       if (eof < 0) exit

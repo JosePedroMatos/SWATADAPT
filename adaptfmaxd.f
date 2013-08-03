@@ -28,7 +28,7 @@
           if (oflowmx(i_mo, res_id) > 0. .and. adaptfmaxd > 0.) then
             adaptfmaxd = min(adaptfmaxd, oflowmx(i_mo, res_id))
           elseif (oflowmx(i_mo, res_id) > 0.) then
-            adaptfmaxd = oflowmx(i_mo, res_id)
+            adaptfmaxd = oflowmx(i_mo, res_id)/86400.
           endif
 
           return

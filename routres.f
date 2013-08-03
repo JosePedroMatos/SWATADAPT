@@ -387,16 +387,23 @@
 
       if (iprint == 1 .and. curyr > nyskip) then
         if (iscen == 1.and. isproj == 0) then
-        write (8,5000) jres, iida, res_vol(jres), resflwi / 86400.,     &
-     &    (resflwo / 86400.), respcp, resev, ressep, ressedi, ressedo,  &
-     &    sedcon, varoute(4,inum2), resorgno, resorgnc,                 &
-     &    varoute(5,inum2), resorgpo, resorgpc, varoute(6,inum2),       &
-     &    resno3o, resno3c, varoute(15,inum2), resno2o, resno2c,        &
-     &    varoute(14,inum2), resnh3o, resnh3c, varoute(7,inum2),        &
-     &    ressolpo, ressolpc, varoute(13,inum2), reschlao,              &
-     &    res_seci(jres), respesti, reactw, volatpst, setlpst, resuspst,&
-     &    difus, reactb, bury, solpesto + sorpesto, lkpst_conc(jres),   &
-     &    lkspst_conc(jres),iyr
+!!    Commented by ADAPT
+!        write (8,5000) jres, iida, res_vol(jres), resflwi / 86400.,     &
+!     &    (resflwo / 86400.), respcp, resev, ressep, ressedi, ressedo,  &
+!     &    sedcon, varoute(4,inum2), resorgno, resorgnc,                 &
+!     &    varoute(5,inum2), resorgpo, resorgpc, varoute(6,inum2),       &
+!     &    resno3o, resno3c, varoute(15,inum2), resno2o, resno2c,        &
+!     &    varoute(14,inum2), resnh3o, resnh3c, varoute(7,inum2),        &
+!     &    ressolpo, ressolpc, varoute(13,inum2), reschlao,              &
+!     &    res_seci(jres), respesti, reactw, volatpst, setlpst, resuspst,&
+!     &    difus, reactb, bury, solpesto + sorpesto, lkpst_conc(jres),   &
+!     &    lkspst_conc(jres),iyr
+!!
+!!    Added by ADAPT
+        write (8,5001) jres, iida, res_vol(jres), resflwi / 86400.,     &
+     &    (resflwo / 86400.), respcp, resev, ressep, adapt_h, ressa, iyr
+!!
+
         else if (isproj == 1) then
         write (22,5000) jres, iida, res_vol(jres), resflwi / 86400.,    &
      &    (resflwo / 86400.), respcp, resev, ressep, ressedi, ressedo,  &
@@ -431,5 +438,8 @@
 
       return
  5000 format ('RES   ',i8,1x,i4,41e12.4,1x,i4)
+ !!   Added by ADAPT
+ 5001 format ('RES   ',i8,1x,i4,8e12.4,1x,i4)
+ !!
  6000 format ('RES   ',i8,1x,i4,41e12.4,1x,i4)
       end
